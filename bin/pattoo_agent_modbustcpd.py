@@ -26,7 +26,7 @@ else:
 from pattoo_shared import log
 from pattoo_shared.phttp import PostAgent
 from pattoo_shared.agent import Agent, AgentCLI
-from pattoo_agent_modbus.tcp import PATTOO_AGENT_MODBUSTCPD
+from pattoo_agent_modbus.tcp.constants import PATTOO_AGENT_MODBUSTCPD
 from pattoo_agent_modbus.tcp import collector
 from pattoo_agent_modbus.tcp.configuration import ConfigModbusTCP as Config
 
