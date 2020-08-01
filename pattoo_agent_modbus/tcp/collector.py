@@ -121,13 +121,13 @@ def _serial_poller(drv):
                 log_message = ('''\
 Cannot connect to target {} to retrieve input register {}, count {}, \
 unit {}: {}'''.format(ip_target, _rv.register, _rv.count, _rv.unit, str(_err)))
-                log.log2warning(51028, log_message)
+                log.log2warning(65028, log_message)
                 continue
             except:
                 log_message = ('''\
 Cause unknown failure with target {} getting input register {}, count {}, \
 unit {}'''.format(ip_target, _rv.register, _rv.count, _rv.unit))
-                log.log2warning(51030, log_message)
+                log.log2warning(65030, log_message)
                 continue
         elif isinstance(_rv, HoldingRegisterVariable):
             try:
@@ -137,7 +137,7 @@ unit {}'''.format(ip_target, _rv.register, _rv.count, _rv.unit))
                 log_message = ('''\
 Cannot connect to target {} to retrieve input register {}, count {}, \
 unit {}'''.format(ip_target, _rv.register, _rv.count, _rv.unit))
-                log.log2warning(51032, log_message)
+                log.log2warning(65032, log_message)
                 continue
             except:
                 log_message = ('''\
@@ -145,7 +145,7 @@ Cause unknown failure with target {} getting holding register {}, count {}, \
 unit {}. [{}, {}, {}]\
 '''.format(ip_target, _rv.register, _rv.count, _rv.unit, sys.exc_info()[0],
            sys.exc_info()[1], sys.exc_info()[2]))
-                log.log2warning(51031, log_message)
+                log.log2warning(65031, log_message)
                 continue
 
         # Process data
@@ -228,11 +228,11 @@ protocol ID {}, transaction ID {}, unit ID {}.{}\
            response.original_code, response.exception_code,
            response.function_code, response.check, response.protocol_id,
            response.transaction_id, response.unit_id, description))
-        log.log2warning(51027, log_message)
+        log.log2warning(65027, log_message)
 
     elif isinstance(response, ModbusIOException):
         # Target may not be available or not listening on Modbus port
         log_message = ('''\
 Pymodbus failure code {}. Message: {}\
 '''.format(response.fcode, response.message))
-        log.log2warning(51026, log_message)
+        log.log2warning(65026, log_message)

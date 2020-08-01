@@ -37,18 +37,11 @@ Make sure that files in this directory are readable by the user that will be run
 Configuring ``pattoo_agent_modbustcpd.yaml``
 --------------------------------------------
 
-Let's get started on configuring ``pattoo_agent_modbustcpd.yaml``.
-
-``pattoo_agent_modbustcpd`` Section
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Here is a sample of what should be added. An explanation follows.
+Let's get started on configuring ``pattoo_agent_modbustcpd.yaml``. Here is a sample of what should be added. An explanation follows.
 
 **NOTE:** The indentations in the YAML configuration are important. Make sure indentations line up. Dashes '-' indicate one item in a list of items.
 
 .. code-block:: yaml
-
-  pattoo_agent_modbustcpd:
 
     polling_interval: 300
 
@@ -91,38 +84,26 @@ This table outlines the purpose of each configuration parameter
 
    * - Section
      - Sub-Section
-     - Config Options
      - Description
-   * - ``pattoo_agent_modbustcpd:``
-     -
-     -
-     -
-   * -
-     - ``polling_interval``
+   * - ``polling_interval``
      -
      - The ``pattoo_agent_modbustcpd`` will report to the ``pattoo`` server every ``polling_interval`` seconds
-   * -
-     - ``polling_groups:``
+   * - ``polling_groups:``
      -
      - List of groupings of ``ip_devices`` that need data from a shared set of Modbus registers
    * -
-     -
      - ``group_name:``
      - Unique name for a group of ``ip_devices`` that share the same Modbus parameters. Make this the first entry in the configuration sub-section. Make sure it starts with a dash '-' which indicates the beginning of a new grouping.
    * -
-     -
      - ``ip_devices:``
      - List of ``ip_devices`` to poll for data
    * -
-     -
      - ``input_registers:``
      - List of Modbus input registers that we need data from for the ``ip_devices``. Each ``address`` must be an OID. The ``multiplier`` is the value by which the polled data result must be multiplied. The default ``multiplier`` is 1.
    * -
-     -
      - ``holding_registers:``
      - List of Modbus holding registers that we need data from for the ``ip_devices``. Each ``address`` must be an OID. The ``multiplier`` is the value by which the polled data result must be multiplied. The default ``multiplier`` is 1.
-   * -
-     - ``unit:``
+   * - ``unit:``
      -
      - Modbus unit number to poll. If not present or blank, the default is '0'
 
