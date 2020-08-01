@@ -1,4 +1,4 @@
-"""Configure the mobus agent."""
+"""Configure the modbus agent."""
 import os
 from pattoo_shared.installation import configure, shared
 from pattoo_shared import files
